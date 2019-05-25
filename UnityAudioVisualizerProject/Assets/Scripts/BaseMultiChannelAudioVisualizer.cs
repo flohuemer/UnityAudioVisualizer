@@ -14,7 +14,7 @@ public class BaseMultiChannelAudioVisualizer : MonoBehaviour
     [ValueList(64, 128, 256, 512, 1024, 2048, 4096, 8192)]
     public int samplesize = 1024;
 
-    public int[] channels;
+    public int[] channels = new int[1];
     public FFTWindow fftWindow = FFTWindow.Rectangular;
 
     // Start is called before the first frame update
@@ -48,13 +48,9 @@ public class BaseMultiChannelAudioVisualizer : MonoBehaviour
 
             for (int i = 0; i < samples.Length; i++)
             {
-                if (samples[i] == null)
+                if (samples[i] == null || samples[i].Length != samplesize)
                 {
-                    samples[i] = new float[samplesize];
-                }
-                else if(samples[i].Length != samplesize) // only resize when necessary
-                {
-                    Array.Resize<float>(ref samples[i], samplesize);
+                    samples[i] = new float[samplesize]; // only resize when necessary
                 }
             }
         }
