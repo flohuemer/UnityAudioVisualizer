@@ -35,9 +35,12 @@ public class BaseMultiChannelAudioVisualizer : MonoBehaviour
     {
         if (old_channelcount != channels.Length)
         {
+            if (old_channelcount < channels.Length)
+            {
+                old_samplesize = -1; // use an impossible value here to induce a resizing for the sub-arrays (only when amount of channels gets increased)
+            }
             old_channelcount = channels.Length;
             Array.Resize<float[]>(ref samples, channels.Length);
-            old_samplesize = -1; // use an impossible value here to induce a resizing for the sub-arrays
         }
         if (old_samplesize != samplesize) // check if samplesize was changed and recreate samples array accordingly
         {
@@ -49,7 +52,7 @@ public class BaseMultiChannelAudioVisualizer : MonoBehaviour
                 {
                     samples[i] = new float[samplesize];
                 }
-                else
+                else if(samples[i].Length != samplesize) // only resize when necessary
                 {
                     Array.Resize<float>(ref samples[i], samplesize);
                 }
