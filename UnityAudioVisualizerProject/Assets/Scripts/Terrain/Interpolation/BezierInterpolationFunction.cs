@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Terrain.Interpolation
 {
@@ -42,7 +43,8 @@ namespace Assets.Scripts.Terrain.Interpolation
                     }
                     for (int j = 0; j < diff; j++)
                     {
-                        float y = bezier(j / diff) - (diff - j) / diff * valueDifference;
+                        float t = (j / diff);
+                        float y = bezier(t) - (1 - t) * valueDifference;
                         result[n] = y;
                         n++;
                         if (n == samples.Length * multiplier)
