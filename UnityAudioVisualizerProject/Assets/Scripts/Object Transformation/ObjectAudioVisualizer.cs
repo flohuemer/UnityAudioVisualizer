@@ -3,15 +3,6 @@ using UnityEngine;
 
 public class ObjectAudioVisualizer : BaseAudioVisualizer
 {
-    //Scales the hight values by a given factor
-    public float scalingFactor = 10000f;
-
-    private readonly Func<float, float, float> heightFunc = (y,s) => y*s;
-
-    //The number of samples used to generate the terrain
-    [ValueList(16, 32, 64, 128, 256, 512, 1024, 2048, 4096)]
-    public int numberOfSamples = 32;
-
     // Start is called before the first frame update
     protected override void Start()
     {

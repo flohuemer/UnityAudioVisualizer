@@ -262,7 +262,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -287,13 +287,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701060167}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.13002947, y: -0.08641016, z: 0.011376109, w: 0.98767215}
+  m_LocalPosition: {x: 2, y: 4, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: -10, z: 0}
 --- !u!1 &2036778865
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,8 +402,6 @@ MonoBehaviour:
   samplesize: 1024
   channel: 0
   fftWindow: 0
-  scalingFactor: 1
-  numberOfSamples: 32
 --- !u!82 &2036778871
 AudioSource:
   m_ObjectHideFlags: 0
@@ -414,7 +412,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fc957be9d10e30943bbaa7eb3d079d74, type: 3}
+  m_audioClip: {fileID: 8300000, guid: eb26eb60b19bb9f4182f2a7e82006cd0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
