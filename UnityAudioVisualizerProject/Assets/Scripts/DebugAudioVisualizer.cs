@@ -1,21 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DebugAudioVisualizer : BaseAudioVisualizer
 {
     // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
-        // additional startup script
-    }
+    protected override void Start() => base.Start(); // additional startup script
 
     // Update is called once per frame
-    protected override void Update() // usually no need to override this method
-    {
-        base.Update();
-    }
+    protected override void Update() => base.Update(); // usually no need to override this method
 
     protected override void ProcessSampleData(float[] sampleData)
     {

@@ -1,14 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Scaler : BaseSyncer
 {
+    public Vector3 beatScale;
+    public Vector3 restScale;
 
     private IEnumerator MoveToScale(Vector3 _target)
     {
-        Vector3 _curr = transform.localScale;
-        Vector3 _initial = _curr;
+        var _curr = transform.localScale;
+        var _initial = _curr;
         float _timer = 0;
 
         while (_curr != _target)
@@ -28,7 +29,10 @@ public class Scaler : BaseSyncer
     {
         base.OnUpdate();
 
-        if (m_isBeat) return;
+        if (m_isBeat)
+        {
+            return;
+        }
 
         transform.localScale = Vector3.Lerp(transform.localScale, restScale, restSmoothTime * Time.deltaTime);
     }
@@ -40,7 +44,4 @@ public class Scaler : BaseSyncer
         StopCoroutine("MoveToScale");
         StartCoroutine("MoveToScale", beatScale);
     }
-
-    public Vector3 beatScale;
-    public Vector3 restScale;
 }

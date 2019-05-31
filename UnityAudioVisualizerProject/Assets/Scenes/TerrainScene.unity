@@ -253,16 +253,16 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 0.10472272
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.01
+  far clip plane: 1872.7
+  field of view: 107.4
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -287,13 +287,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983882859}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.3849425, y: 0.2691385, z: -0.11842377, w: 0.8748483}
+  m_LocalPosition: {x: 183.81, y: 789.1, z: -5.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.5, y: 34.2, z: 0}
 --- !u!1 &1759899534
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   samplesize: 4096
   channel: 0
   fftWindow: 0
-  scalingFactor: 1
+  scalingFactor: 0.5
   numberOfSamples: 32
   splitStrategie: 0
   interpolationStrategy: 3
@@ -343,7 +343,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bb4ca04ea5e7bc440bc18b30828f6916, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6490c803d234991419da0401611f6422, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

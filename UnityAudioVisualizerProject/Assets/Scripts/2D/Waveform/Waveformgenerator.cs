@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Waveformgenerator : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class Waveformgenerator : MonoBehaviour
 
     void Start()
     {
-        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        var lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.widthMultiplier = 0.2f;
         float[] spectrum = new float[256];
@@ -19,7 +18,7 @@ public class Waveformgenerator : MonoBehaviour
 
     void Update()
     {
-        LineRenderer lineRenderer = GetComponent<LineRenderer>();
+        var lineRenderer = GetComponent<LineRenderer>();
         float[] spectrum = new float[256];
         audioSource.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
         for (int i = 1; i < spectrum.Length - 1; i++)

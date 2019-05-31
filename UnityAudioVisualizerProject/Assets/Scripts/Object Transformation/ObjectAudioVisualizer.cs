@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectAudioVisualizer : BaseAudioVisualizer
 {
@@ -8,17 +7,10 @@ public class ObjectAudioVisualizer : BaseAudioVisualizer
     public float maxSize = 5f;
 
     // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
-    }
+    protected override void Start() => base.Start();
 
     // Update is called once per frame
-    protected override void Update()
-    {
-        base.Update();
-        
-    }
+    protected override void Update() => base.Update();
 
     protected override void ProcessSampleData(float[] sampleData)
     {

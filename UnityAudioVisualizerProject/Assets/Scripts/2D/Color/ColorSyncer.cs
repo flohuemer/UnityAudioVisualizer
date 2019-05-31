@@ -1,16 +1,20 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(GameObject))]
 public class ColorSyncer : BaseSyncer
 {
 
+    public Color[] beatColors;
+    public Color restColor;
+
+    private int m_randomIndx;
+    private GameObject target;
+
     private IEnumerator MoveToColor(Color _target)
     {
-        Color _curr = GetComponent<Renderer>().material.color;
-        Color _initial = _curr;
+        var _curr = GetComponent<Renderer>().material.color;
+        var _initial = _curr;
         float _timer = 0;
 
         while (_curr != _target)
@@ -28,35 +32,27 @@ public class ColorSyncer : BaseSyncer
 
     private Color RandomColor()
     {
-        if (beatColors == null || beatColors.Length == 0) return Color.white;
+        if (beatColors == null || beatColors.Length == 0)
+        {
+            return Color.white;
+        }
+
         m_randomIndx = Random.Range(0, beatColors.Length);
         return beatColors[m_randomIndx];
     }
 
-    public override void OnUpdate()
-    {
-        base.OnUpdate();
-    }
+    public override void OnUpdate() => base.OnUpdate();
 
     public override void OnBeat()
     {
         base.OnBeat();
 
         // pick a random color
-        Color newColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+        var newColor = new Color(Random.value, Random.value, Random.value, 1.0f);
         // apply it on current object's material
         GetComponent<Renderer>().material.color = newColor;
     }
 
-    private void Start()
-    {
-        target = GetComponent<GameObject>();
-    }
-
-    public Color[] beatColors;
-    public Color restColor;
-
-    private int m_randomIndx;
-    private GameObject target;
+    private void Start() => target = GetComponent<GameObject>();
 
 }
